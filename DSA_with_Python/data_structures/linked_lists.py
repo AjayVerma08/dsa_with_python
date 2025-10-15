@@ -102,6 +102,10 @@ class LinkedList:
             curr.next = curr.next.next
             self.n = self.n - 1
         return None
+    def deleteByIndex(self, index):
+        value = self.__getitem__(index)
+        return self.remove(value)
+
     def search(self, item):
         """look for an item in the list"""
         curr = self.head
@@ -124,11 +128,8 @@ class LinkedList:
                 return curr.data
             curr = curr.next
             pos += 1
-        return "IndexError: Index out of range "
+        error = "IndexError: Index out of range"
+        return print("IndexError: Index out of range"), error
 
 
 L = LinkedList()
-for i in range(1, 11):
-    L.append(i)
-
-print(L)
