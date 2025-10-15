@@ -1,5 +1,4 @@
 """Implementing a dynamic array"""
-
 import ctypes
 class Mylist:
     def __init__(self):
