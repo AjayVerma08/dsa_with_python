@@ -131,5 +131,31 @@ class LinkedList:
         error = "IndexError: Index out of range"
         return print("IndexError: Index out of range"), error
 
+    def replace_max(self, value):
+        temp = self.head
+        maximum = temp
 
-L = LinkedList()
+        while temp is not None:
+            if temp.data > maximum.data:
+                maximum = temp
+            temp = temp.next
+        maximum.data = value
+    def sum_odd_nodes(self):
+        temp = self.head
+        counter = 0
+        result = 0
+        while temp is not None:
+            if counter %2 != 0:
+                result = result + temp.data
+            counter +=1
+            temp = temp.next
+        print(result)
+    def reverse(self):
+        prev_node = None
+        curr_node = self.head
+        while curr_node is not None:
+            next_node = curr_node.next
+            curr_node.next = prev_node
+            prev_node = curr_node
+            curr_node = next_node
+        self.head = prev_node
